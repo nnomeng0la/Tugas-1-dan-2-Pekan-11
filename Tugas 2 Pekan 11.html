@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Chat</title>
+    <style>
+        div{
+            width: 100%;
+        }
+        #hasil {
+            border: black 2px solid;
+            height: 600px;
+        }
+
+        .dua {
+            border: black solid 1px;
+            position: fixed;
+            bottom: 0%;
+            display: flex;
+            justify-content: space-between;
+        }
+        p{
+            margin: 0%;
+        }
+    </style>
+    <script>
+        function kirim() {
+            let pesan = document.getElementById("pesan").value;
+            let node = document.createElement("p");
+            let textnode = document.createTextNode(pesan);
+            node.appendChild(textnode);
+            document.getElementById("has").appendChild(node);
+        }
+    </script>
+</head>
+
+<body>
+    <div id="hasil">
+        <p id="has"></p>
+    </div>
+    <br>
+    <div class="dua">
+        <div> <input type="text" id="pesan" width="100%" value=""></div>
+        <button id="kirim" onclick="kirim()" style="font-size: medium;">kirim</button>
+    </div>
+
+</body>
+
+</html>

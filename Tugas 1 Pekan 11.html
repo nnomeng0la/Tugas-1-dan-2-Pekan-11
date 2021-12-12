@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator Kurs Rupiah</title>
+    <style>
+        table,
+        td,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 2px 20px;
+        }
+
+        fieldset {
+            background-color: beige;
+        }
+    </style>
+    <script>
+        function hasilkurs() {
+            let nilai = Number(document.getElementById("nilai").value);
+            let S = document.getElementById("sel").value;
+            if (S == "D1") {
+                let US = 9915;
+                let H = nilai * US;
+                document.getElementById("hasil").value = H;
+            } else if (S == "D2") {
+                let U2 = 13472;
+                let I = nilai * U2;
+                document.getElementById("hasil").value = I;
+            } else if (S == "RM") {
+                let RM = 874;
+                let R = nilai * RM;
+                document.getElementById("hasil").value = R;
+            } else if (S == "YJ") {
+                let YJ = 120;
+                let Y = nilai * YJ;
+                document.getElementById("hasil").value = Y;
+            } else if (S == "Eu") {
+                let Eu = 15888;
+                let E = nilai * Eu;
+                document.getElementById("hasil").value = E;
+            } else if (S == "RA") {
+                let RA = 3592;
+                let R = nilai * RA;
+                document.getElementById("hasil").value = R;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend><b>Kurs Rupiah - Mata Uang Asing</b></legend>
+        <table>
+            <tr>
+                <th>Masukkan Nilai</th>
+                <th>Valas</th>
+                <th>Nilai Rupiah</th>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value="" id="nilai" onchange="hasilkurs()" />
+                </td>
+                <td>
+                    <select id="sel" onchange="hasilkurs()">
+                        <option value="D1">Dollar US</option>
+                        <option value="D2">Dollar Singapore</option>
+                        <option value="RM">Ringgit Malaysia</option>
+                        <option value="YJ">Yen Japan</option>
+                        <option value="Eu">Euro</option>
+                        <option value="RA">Riyal Arab Saudi</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="number" id="hasil" value="" />
+                </td>
+            </tr>
+        </table>
+    </fieldset>
+
+</body>
+
+</html>
