@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Set</title>
+    <style>
+        fieldset{
+            margin: 10px;
+        }
+        legend {
+            text-align: center;
+        }
+
+        body {
+            background-color:lightblue;
+        }
+
+        table {
+            border: black solid;
+
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            border: 1px solid black;
+            text-align: center;
+            padding: 8px;
+        }
+    </style>
+    <script>
+        function hitung1() {
+            const PI = 3.14;
+            let Jari2 = Number(document.getElementById("Jari2").value);
+            let Hasil1 = 2 * PI * Jari2;
+            let hasil2 = PI * Jari2 ** 2;
+            document.getElementById("kel").value = Hasil1;
+            document.getElementById("luas").value = hasil2;
+
+        };
+        function Kurs() {
+            const D = 1 / 14650;
+            let RP = Number(document.getElementById("Rupiah").value);
+            let Doll = D * RP;
+            document.getElementById("dollar").value = Doll + "$";
+
+        };
+        function Parkir() {
+            let JM = Number(document.getElementById("JM").value);
+            let JK = Number(document.getElementById("JK").value);
+            let La = JK - JM;
+            let P1 = 3000;
+            document.getElementById("LA").value = La;
+            if (La > 2) {
+                let P2 = La - 2;
+                let P = P2 * 1000;
+                document.getElementById("KB").value = P + P1;
+            } else {
+                document.getElementById("KB").value = P1;
+
+            }
+        };
+        function jumlah() {
+            let B1 = Number(document.getElementById("bil1").value);
+            let B2 = Number(document.getElementById("bil2").value);
+            document.getElementById("bil3").value = B1 + B2;
+
+        }
+    </script>
+</head>
+
+<body>
+    <fieldset>
+        <legend>
+            <h1>Program Set<br>Latihan Program JavaScript</h1>
+        </legend>
+        <p><b>Nama: Muhammad Komarudin <br>NIM: 0110121168 <br>Prodi: Sistem Informasi <br>Kelas: SI08</b></p>
+        <hr>
+        <h2>Soal 1: Menghitung Luas dan Keliling Lingkaran</h2>
+        Masukkan jari-jari: <input type="number" id="Jari2" value="" onchange="hitung1()" />
+        <button onclick="hitung1()">Hitung</button>
+        Luasnya adalah: <input type="number" id="luas" value="" />
+        Kelilingnya adalah: <input type="number" id="kel" value="" />
+        <hr>
+        <h2>Soal 2: Menghitung Kurs Rupiah</h2>
+        Masukkan nilai Rupiah: <input type="number" id="Rupiah" value="" onchange="Kurs()" />
+        <button onclick="Kurs()">Konversi</button>
+        Dollar:<input type="text" id="dollar" value="" />
+        <hr>
+        <h2>Soal 3: Menghitung Biaya Parkir</h2>
+        <table>
+            <tr>
+                <th>Jam Masuk</th>
+                <th>Jam Keluar</th>
+                <th>Lama</th>
+                <th>Keluaran Biaya</th>
+            </tr>
+            <tr>
+                <td><input type="number" id="JM" value="" onchange="Parkir()" /></td>
+                <td><input type="number" id="JK" value="" onchange="Parkir()" /></td>
+                <td><input type="number" id="LA" value="" /></td>
+                <td><input type="number" id="KB" value="" /></td>
+            </tr>
+        </table>
+        <button onclick="Parkir()">Hitung Biaya</button>
+        <hr>
+        <h2>Soal 4: Menghitung Jumla Dua Bilangan</h2>
+        <input type="number" id="bil1" onchange="jumlah()" value="" />
+        <b>+</b>
+        <input type="number" id="bil2" onchange="jumlah()" value="" />
+        <b>=</b>
+        <input type="number" id="bil3" onchange="jumlah()" value=""/>
+    </fieldset>
+</body>
+
+</html>
